@@ -1,0 +1,69 @@
+## WARNING
+This repo isn’t really meant to be used by other people because I didn’t have a motivation to really make it so. If you do want me to make it into actually usable software.
+
+arturn011 on discord or join the discord server if you want to https://discord.gg/a35YBCdyTC.
+
+### Description
+wellfitness_population_counter uses UIAutomator2 to take a screenshot of the well fitness app and tesseract to get the number of people at the gym. It will put that info into a .csv file and then report success to your webhook.
+
+Or in a case of failure it will report failure zipping used text extracted from the screenshot along with the .csv.
+
+Anyhow, the csv can be eventually used to calculate times when there’s least amount of people present.
+  
+
+## Docs
+The program uses UIAutmoator2 for Android-related actions such as scrolling, taking screenshots or opening apps.
+
+The program was primarly made for a XIAOMI device, and so I can’t promise that it will work on other devices too. The docs will also be pointed at XIAOMI phones, if you have a different device just refer to your device’s docs.
+
+  
+
+### Installation
+
+To install just run
+
+`git clone https://github.com/Outshader/wellfitness_population_counter`
+
+Change the parameter webhook_url in discord.py. Optionally you can also change the device parameter in script.py so you don’t have to give the parameters later.
+
+### Prerequisites
+
+**Misc. Python packages** - You can either use the venv that comes with the program or use your own. If you’re using your own run
+
+`pip install -r requirements.txt`
+
+In the cloned directory.
+
+  
+
+**TesseractOCR** - Python package (included in venv and requirements.txt) and a binary installed on your system and added to PATH. Installation steps for the binary can be found here:
+
+https://github.com/tesseract-ocr/tesseract#installing-tesseract
+
+  
+
+**ADB debugging enabled** - for guidance refer to your device’s guidelines for enabling.
+
+  
+
+**USB debugging (Security settings)** - this setting is primarly needed and available on XIAOMI-related devices. To enable it refer to your devices guidelines. Generally you will need a sim card to enable said setting. On Oppo, Realme and OnePlus this setting is usually named **“Disable permission monitoring”**.
+
+  
+
+### Usage
+Run:
+
+script.py <android_ip> <android_port>
+
+Or just
+
+script.py *android_ip*
+
+And UIAutomator should theoretically get the port itself.
+
+
+## Roadmap
+
+* [x] autodiscovery of devices
+
+* [ ] statistics reliance improvement by accounting for classes
