@@ -5,7 +5,7 @@ from PIL import Image
 import pytesseract
 import os, sys
 import csv
-from discord import report_failure, report_success
+from webhook_report import ppl_count_not_found, report_success
 
 try:
     if len(sys.argv)==2:
@@ -33,7 +33,7 @@ def text_processing(txt):
             return txt_split[i]
 
     print("Failure! Reporting...")
-    report_failure(txt_split, txt, filename)
+    ppl_count_not_found(txt_split, txt, filename)
     return False
 
 
@@ -76,7 +76,7 @@ def main():
 
     text = pytesseract.image_to_string(Image.open(src_filename))
     
-    ppl_count = text_processing(text)
+    ppl_count = int(text_processing(text))
     if not ppl_count:
         if os.path.exists(filename+"_logs.zip"):
             os.remove(filename+"_logs.zip")
@@ -93,7 +93,7 @@ def main():
         os.remove(filename+"_logs.zip")
     d.press("power")
     print("Reporting success!")
-    report_success()
+    report_success(ppl_count)
     print("Done!")
     return 0
 

@@ -1,0 +1,5 @@
+Waiting for data pulling
+Logging results
+Cleaning up
+Reporting success!
+Done!

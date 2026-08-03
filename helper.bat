@@ -1,4 +1,5 @@
 @echo on
-cd C:\Users\Artur\Desktop\MediaThings\adb\gym-people-counter
-.\gym_venv\Scripts\python.exe script.py
+cd /d "<Script's location>"
+"<python_binary_location>" script.py > error_log.txt 2>&1
+"<python_binary_location>" error_check.py
 timeout /t 10

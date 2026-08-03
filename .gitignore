@@ -4,3 +4,5 @@ my_discord.py
 docker\*
 docker
 __pycache__
+my_stuff
+.gitignore
