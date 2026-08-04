@@ -59,7 +59,8 @@ Install TesseractOCR binary from:
 
 Change variables in vars.env to yours. You can also skip the variables but then you'll have to pass arguments to the script. Arguments are as follows:
 
---port | -p <device_port> Define device's port to use
+--port | -p <device_port> Define device's port to use 
+
 --addr | -a <device_ip> Define device's IP to connect to
 
 If both the .env file and the arguments won't be defined
@@ -73,4 +74,6 @@ If both the .env file and the arguments won't be defined
 
 * [x] autodiscovery of devices
 
-* [ ] statistics reliance improvement by accounting for classes
+* [ ] statistics reliance improvement by accounting for classes via their site
+
+* [ ] dry runs
