@@ -24,7 +24,7 @@ To install just run
 
 `git clone https://github.com/Outshader/wellfitness_population_counter`
 
-Change the parameter webhook_url in discord.py. Optionally you can also change the device parameter in script.py so you don’t have to give the parameters later.
+Change the parameter webhook_url in webhook_report.py. Optionally you can also change the device parameter in script.py so you don’t have to give the parameters later.
 
 ### Prerequisites
 
@@ -50,16 +50,24 @@ https://github.com/tesseract-ocr/tesseract#installing-tesseract
 
   
 
-### Usage
+### Quick start
 Run:
+`git clone https://github.com/Outshader/wellfitness_population_counter`
+To install necessary packages.
 
-script.py <android_ip> <android_port>
+Install TesseractOCR binary from:
+`https://github.com/tesseract-ocr/tesseract#installing-tesseract`
 
-Or just
+Change variables in vars.env to yours. You can also skip the variables but then you'll have to pass arguments to the script. Arguments are as follows:
 
-script.py *android_ip*
+--port | -p <device_port> Define device's port to use
+--addr | -a <device_ip> Define device's IP to connect to
 
-And UIAutomator should theoretically get the port itself.
+If both the .env file and the arguments won't be defined
+
+#### Usage
+
+`script.py [--port | -p] <device_ip> [--addr | -a] <device_port> `
 
 
 ## Roadmap
