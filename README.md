@@ -1,7 +1,6 @@
 ## WARNING
-This repo isn’t really meant to be used by other people because I didn’t have a motivation to really make it so. If you do want me to make it into actually usable software.
-
-arturn011 on discord or join the discord server if you want to https://discord.gg/a35YBCdyTC.
+This repo isn’t really meant to be used by other people because I didn’t have a motivation to really make it so. If you do want me to make it into actually usable software. Contact me somewhere, like here:
+arturn011 on discord or join the discord server if you want to https://discord.gg/a35YBCdyTC. Or you can make a thingy here on github, like an issue, discussion or whatnot.
 
 ### Description
 wellfitness_population_counter uses UIAutomator2 to take a screenshot of the well fitness app and tesseract to get the number of people at the gym. It will put that info into a .csv file and then report success to your webhook.
