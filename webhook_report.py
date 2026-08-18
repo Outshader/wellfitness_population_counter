@@ -42,7 +42,7 @@ def create_debug_zip(txt: str, txt_split: str, filename: str):
         
     print(f"Created full_text.txt and split_text.txt")
     
-    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M")
+    current_time = filename
     zip_name = shutil.make_archive(f"{current_time}_log", "zip", temp_dir)
                 
     print(f"Archived to {zip_name}")

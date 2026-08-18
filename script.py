@@ -10,6 +10,7 @@ from webhook_report import ppl_count_not_found, report_success
 import argparse
 from dotenv import load_dotenv
 from check_valid_parameters import check_address
+import sys
 
 load_dotenv("vars.env")
 
@@ -46,7 +47,7 @@ def get_ppl_count(txt, filename, args):
     print("Failure! Reporting...")
     
     if args.skip:
-        ppl_count_not_found(txt_split, txt, filename)
+        ppl_count_not_found(txt, txt_split, filename)
     
     return None
 
@@ -59,6 +60,7 @@ def csv_append(ppl_count, filename):
             'ppl_count':ppl_count,
             'date_time':filename
         })
+    return 0
 
 
 def get_device_address(args):
@@ -71,11 +73,17 @@ def get_device_address(args):
 
 
 def connect_device(device):
-    try:
-        d = u2.connect(device)
-    except u2e.ConnectError:
-        port = input("u2a will need a port")
-        device = f"{device}:{port}"
+    for attempt in range(2):
+        try:
+            d = u2.connect(device)
+
+        except u2e.ConnectError:
+            if attempt == 0:
+                port = input("u2a will need a port")
+                device = f"{device}:{port}"
+            else:
+                sys.exit("The connection process failed")
+
     return d
 
 
@@ -100,6 +108,7 @@ def main():
     args = arguments_parser()
     address = get_device_address(args).strip(":")
     d = connect_device(address)
+    
     prepare_phone(d)
     
     

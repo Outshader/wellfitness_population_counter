@@ -1,16 +1,22 @@
+# WARNING
+This repo has been depracated, will likley not be updated further. The concept has been moved to an API approach here:
+https://github.com/Outshader/wellfitness_statistics_api
+
+~~
 ## WARNING
 This repo isn’t really meant to be used by other people because I didn’t have a motivation to really make it so. If you do want me to make it into actually usable software. Contact me somewhere, like here:
 arturn011 on discord or join the discord server if you want to https://discord.gg/a35YBCdyTC. Or you can make a thingy here on github, like an issue, discussion or whatnot.
+~~
 
-### Description
+### Short Description
 wellfitness_population_counter uses UIAutomator2 to take a screenshot of the well fitness app and tesseract to get the number of people at the gym. It will put that info into a .csv file and then report success to your webhook.
 
 Or in a case of failure it will report failure zipping used text extracted from the screenshot along with the .csv.
 
 Anyhow, the csv can be eventually used to calculate times when there’s least amount of people present.
-  
 
-## Docs
+
+## Specific documentation
 The program uses UIAutmoator2 for Android-related actions such as scrolling, taking screenshots or opening apps.
 
 The program was primarly made for a XIAOMI device, and so I can’t promise that it will work on other devices too. The docs will also be pointed at XIAOMI phones, if you have a different device just refer to your device’s docs.
@@ -49,13 +55,21 @@ https://github.com/tesseract-ocr/tesseract#installing-tesseract
 
   
 
-### Quick start
-Run:
-`git clone https://github.com/Outshader/wellfitness_population_counter`
-To install necessary packages.
+## Quick start
 
-Install TesseractOCR binary from:
-`https://github.com/tesseract-ocr/tesseract#installing-tesseract`
+
+
+
+### Prerequisites
+To run this project you will need: 
+
+### Installation
+
+To install most things just run
+
+`git clone https://github.com/Outshader/wellfitness_population_counter`
+
+### Usage
 
 Change variables in vars.env to yours. You can also skip the variables but then you'll have to pass arguments to the script. Arguments are as follows:
 

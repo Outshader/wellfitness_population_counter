@@ -6,3 +6,4 @@ docker
 __pycache__
 my_stuff
 .gitignore
+.*
